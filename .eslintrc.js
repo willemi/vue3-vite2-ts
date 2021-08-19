@@ -16,23 +16,17 @@ module.exports = {
   },
   plugins: ['vue', '@typescript-eslint'],
   rules: {
+    'vue/no-multiple-template-root': 'off',
     'import/extensions': 'off',
     'import/no-unresolved': 'off',
+    'import/no-absolute-path': 'off',
+    'import/no-extraneous-dependencies': 'off',
+    'prefer-promise-reject-errors': 'off',
     'no-console': 'off',
-    'no-param-reassign': [
-      'error',
-      {
-        props: true,
-        ignorePropertyModificationsFor: [
-          'e', // for e.returnvalue
-          'ctx', // for Koa routing
-          'req', // for Express requests
-          'request', // for Express requests
-          'res', // for Express responses
-          'response', // for Express responses
-          'state' // for vuex state
-        ]
-      }
-    ]
+    'no-async-promise-executor': 'off',
+    'no-underscore-dangle': 'off',
+    'no-param-reassign': 'off',
+    'no-plusplus': 'off',
+    'no-bitwise': 'off'
   }
 }

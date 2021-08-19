@@ -1,21 +1,21 @@
-import Axios from 'axios'
+import Axios, { AxiosInstance } from 'axios'
 import { ElMessage } from 'element-plus'
 
-const baseURL = 'https://api.github.com'
+const baseURL = '/'
 
-const axios = Axios.create({
+const axios: AxiosInstance = Axios.create({
   baseURL,
   timeout: 20000 // 请求超时 20s
 })
 
 // 前置拦截器（发起请求之前的拦截）
 axios.interceptors.request.use(
-  (response) => {
+  (config) => {
     /**
      * 根据你的项目实际情况来对 config 做处理
      * 这里对 config 不做任何处理，直接返回
      */
-    return response
+    return config
   },
   (error) => {
     return Promise.reject(error)

@@ -1,0 +1,90 @@
+$assets-img: '../assets/';
+// 主题颜色
+$fontColor: #ffffff;
+
+.scrollBar {
+  overflow-y: auto;
+  &::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    background: rgba(48, 49, 53, 0.1);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgba(75, 75, 75, 1);
+    border-radius: 50px;
+
+    &:hover {
+      background: rgba(75, 75, 75, 1);
+    }
+  }
+}
+@mixin clearfix {
+  &:after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin flex($justify-content: center, $align-items: center) {
+  display: flex;
+  justify-content: $justify-content;
+  align-items: $align-items;
+}
+
+@mixin commonBack($url, $size: 100% 100%) {
+  background: url('#{$assets-img}#{$url}') no-repeat center;
+  background-size: $size;
+  background-repeat: no-repeat;
+}
+
+@mixin positionCenter($position: absolute) {
+  position: $position;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+}
+
+@mixin positionLeft($position: absolute, $left: $common-wd) {
+  position: $position;
+  top: 50%;
+  left: $left;
+  transform: translate3d(0, -50%, 0);
+}
+
+@mixin font(
+  $font-size,
+  $color: #333,
+  $text-align: left,
+  $line-height: $font-size,
+  $font-weight: 400
+) {
+  font-size: $font-size;
+  color: $color;
+  text-align: $text-align;
+  line-height: $line-height;
+  font-weight: $font-weight;
+}
+
+@mixin wh($w: 100%, $h: 100%) {
+  width: $w;
+  height: $h;
+}
+
+/**
+ * 最多显示 $lineCount 行
+ * lines
+ *
+ * example:
+ * @include lines;
+ * @include lines(3);
+ */
+
+@mixin lines($lineCount: 2) {
+  display: -webkit-box;
+  -webkit-line-clamp: $lineCount;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

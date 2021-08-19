@@ -10,30 +10,35 @@ This template should help get you started developing with Vue 3 and Typescript i
 4. 路由工具：Vue Router 4.x
 5. 状态管理：Vuex 4.x
 6. UI 框架：Element Plus
-7. CSS 预编译：Stylus / Sass / Less
+7. CSS 预编译：Sass
 8. HTTP 工具：Axios
-9. Git Hook 工具：husky + lint-staged
+9. Git Hook 工具：husky
 10. 代码规范：EditorConfig + Prettier + ESLint + Airbnb JavaScript Style Guide
 11. 提交规范：Commitizen + Commitlint
-12. 单元测试：vue-test-utils + jest + vue-jest + ts-jest
-13. 自动部署：GitHub Actions
 
 
-# 代码风格管理 EditorConfig + Prettier + ESLint
-## VSCode 使用 EditorConfig 需要去插件市场下载插件 EditorConfig for VS Code 
-## VSCode 编辑器使用 Prettier 配置需要下载插件 Prettier - Code formatter 。
-## VSCode 使用 ESLint 配置文件需要去插件市场下载插件 ESLint
+## 代码风格管理 EditorConfig + Prettier + ESLint
+1. VSCode 使用 EditorConfig 需要去插件市场下载插件 EditorConfig for VS Code 
+2. VSCode 编辑器使用 Prettier 配置需要下载插件 Prettier - Code formatter 。
+3. VSCode 使用 ESLint 配置文件需要去插件市场下载插件 ESLint
 
-## 格式化所有文件（. 表示所有文件）
+格式化所有文件（. 表示所有文件）
+
 ```js
+  npm run format
   npx prettier --write .
 ```
-## eslint 格式化
+
+eslint 格式化
+
 ```js
+  npm run eslint
   eslint --fix
 ```
 
-# GIT commit message 格式规范
+## GIT commit message 格式规范
+
+`npm run prepare`
 
 `git commit -m "xxx" => git cz`
 
@@ -62,7 +67,7 @@ Added new event to browser:
 Breaks $browser.onHashChange, which was removed (use onUrlChange instead)
 ```
 
-## type
+### type
 | 值 | 描述 |
 |--|--|
 | feat | 新功能 |
